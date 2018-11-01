@@ -89,7 +89,7 @@ const SignupWindow = props => {
         ),
         React.createElement("input", { id: "pass2", type: "password", name: "pass2", placeholder: "retype password" }),
         React.createElement("input", { type: "hidden", name: "_csrf", value: props.csrf }),
-        React.createElement("input", { className: "formSubmit", type: "submit", value: "Sign in" })
+        React.createElement("input", { className: "formSubmit", type: "submit", value: "Sign UP" })
     );
 };
 
@@ -98,7 +98,7 @@ const createLoginWindow = csrf => {
 };
 
 const createSignupWindow = csrf => {
-    ReactDOM.render(React.createElement(SignupWindow, { csrf: csrf }), document.querySelector("content"));
+    ReactDOM.render(React.createElement(SignupWindow, { csrf: csrf }), document.querySelector("#content"));
 };
 
 const setup = csrf => {
@@ -130,8 +130,8 @@ $(document).ready(function () {
     getToken();
 });
 const handleError = message => {
-    $("errorMessage").text(message);
-    $("domoMessage").animate({ width: 'toggle' }, 350);
+    $("#errorMessage").text(message);
+    $("#domoMessage").animate({ width: 'toggle' }, 350);
 };
 
 const redirect = response => {
